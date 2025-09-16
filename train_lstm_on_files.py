@@ -1,21 +1,3 @@
-"""
-train_lstm_on_files
--------------------
-End-to-end LSTM training over sliding-window batches derived from a single
-time series stored in Excel/CSV. The script:
-  1) builds fixed-length windows (n) with next-step prediction targets,
-  2) splits into train/val/test (hold-out through simple slicing),
-  3) grid-searches over (num_layers, window length n, hidden_size),
-  4) reports best R^2 on test and persists the best model weights.
-
-Notes
------
-- Batching uses overlapping windows via enumerate-based slicing.
-- The dataset column name and sheet name are specified below.
-- This file intentionally keeps the original structure; comments and
-  docstrings were professionalised and redundant imports removed.
-"""
-
 from __future__ import annotations
 
 import itertools
